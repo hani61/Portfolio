@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hany — Builder</title>
+<meta name="description" content="Hany. CS grad. WordPress sites + Odoo automations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14181a;
+    --surface: #1b2124;
+    --surface-2: #20272a;
+    --ink: #ece7dc;
+    --ink-dim: #9aa19e;
+    --ink-faint: #5f6866;
+    --accent: #c9a24b;
+    --accent-dim: #8a7239;
+    --line: #2c3336;
+    --radius: 3px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  a{ color:inherit; }
+
+  ::selection{ background:var(--accent); color:#14181a; }
+
+  @media (prefers-reduced-motion: reduce){
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:640px;
+    margin:0 auto;
+    padding: 18px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .topbar-name{
+    font-size:14px;
+    letter-spacing:0.02em;
+  }
+  .topbar-status{
+    font-size:11px;
+    color: var(--ink-dim);
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--accent);
+    box-shadow: 0 0 0 3px rgba(201,162,75,0.14);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 76px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-size: 12px;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  .hero h1{
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.18;
+    font-weight: 600;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+    max-width: 15ch;
+  }
+  .hero p{
+    font-size: 16px;
+    color: var(--ink-dim);
+    max-width: 46ch;
+    margin: 0 0 30px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 11px 18px;
+    border-radius: var(--radius);
+    text-decoration:none;
+    display:inline-block;
+    border: 1px solid var(--line);
+  }
+  .btn-primary{
+    background: var(--accent);
+    color: #14181a;
+    border-color: var(--accent);
+  }
+  .btn-ghost{
+    color: var(--ink);
+  }
+
+  /* ---------- section shell ---------- */
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom: 34px;
+    gap: 16px;
+  }
+  .section-head h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .section-head .count{
+    font-size: 12px;
+    color: var(--ink-faint);
+    white-space:nowrap;
+  }
+
+  /* ---------- projects ---------- */
+  .project{
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+    display:grid;
+    grid-template-columns: 168px 1fr;
+    gap: 26px;
+  }
+  .project:last-child{ padding-bottom: 0; }
+
+  .project-shot{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 3;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .project-shot svg{ width:100%; height:100%; display:block; }
+
+  .project-tag{
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+  }
+  .project h3{
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .project p{
+    font-size: 14px;
+    color: var(--ink-dim);
+    margin: 0;
+    max-width: 42ch;
+  }
+
+  @media (max-width: 520px){
+    .project{ grid-template-columns: 1fr; }
+    .project-shot{ aspect-ratio: 16/9; }
+  }
+
+  /* ---------- proof ---------- */
+  .proof{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    gap: 26px;
+    align-items:center;
+  }
+  .proof-figure{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 40px;
+    color: var(--accent);
+    line-height:1;
+    white-space:nowrap;
+  }
+  .proof-figure span{
+    display:block;
+    font-size: 11px;
+    color: var(--ink-faint);
+    margin-top: 8px;
+  }
+  .proof-text p{
+    margin:0 0 10px;
+    font-size:15px;
+    color: var(--ink-dim);
+    max-width: 44ch;
+  }
+  .proof-text a{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+  .proof-text a:hover{ border-color: var(--accent); }
+
+  @media (max-width: 520px){
+    .proof{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- contact / footer ---------- */
+  footer{
+    padding: 48px 0 64px;
+  }
+  footer h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 22px;
+  }
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+  .contact-row{
+    display:flex;
+    align-items:baseline;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    text-decoration:none;
+  }
+  .contact-row:last-child{ border-bottom: 1px solid var(--line); }
+  .contact-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    width: 64px;
+    flex-shrink:0;
+  }
+  .contact-value{
+    font-size: 15px;
+  }
+  .contact-row:hover .contact-value{ color: var(--accent); }
+  .foot-note{
+    margin-top: 30px;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-name mono">HANY</div>
+      <div class="topbar-status"><span class="dot"></span>currently building</div>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <section class="hero" style="border-top:none; padding-top:76px;">
+      <p class="hero-eyebrow mono">CS GRAD → BUILDER</p>
+      <h1>I build WordPress sites and Odoo automations.</h1>
+      <p>Small businesses get a working store or a working backend, not a pitch deck. I ship, then I write up what happened.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="#projects">See the work</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <h2>Recent builds</h2>
+        <span class="count mono">3 SHIPPED</span>
+      </div>
+
+      <div class="project">
+        <div class="project-shot">
+          <svg viewBox="0 0 168 126" xmlns="http://www.w3.org/2000/svg">
+            <rect width="168" height="126" fill="#20272a"/>
+            <rect x="0" y="0" width="168" height="16" fill="#242c2f"/>
+            <circle cx="10" cy="8" r="2.4" fill="#c9a24b" opacity="0.7"/>
+            <circle cx="18" cy="8" r="2.4" fill="#5f6866"/>
+            <circle cx="26" cy="8" r="2.4" fill="#5f6866"/>
+            <rect x="14" y="28" width="52" height="52" fill="#2c3336"/>
+            <rect x="14" y="28" width="52" height="52" fill="none" stroke="#c9a24b" stroke-width="1" opacity="0.5"/>
+            <rect x="74" y="28" width="80" height="8" fill="#3a4245"/>
+            <rect x="74" y="42" width="60" height="6" fill="#2c3336"/>
+            <rect x="74" y="54" width="40" height="6" fill="#2c3336"/>
+            <rect x="74" y="68" width="34" height="12" fill="#c9a24b" opacity="0.85"/>
+            <rect x="14" y="92" width="140" height="6" fill="#2c3336"/>
+            <rect x="14" y="104" width="90" height="6" fill="#242c2f"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <p class="project-tag mono">WORDPRESS / WOOCOMMERCE</p>
+          <h3>Local goods, on WooCommerce</h3>
+          <p>A WordPress + WooCommerce store for a home-goods seller — catalog, cart, and checkout live in under a week.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-shot">
+          <svg viewBox="0 0 168 126" xmlns="http://www.w3.org/2000/svg">
+            <rect width="168" height="126" fill="#20272a"/>
+            <rect x="14" y="20" width="58" height="36" rx="2" fill="#2c3336"/>
+            <text x="43" y="42" font-family="monospace" font-size="9" fill="#9aa19e" text-anchor="middle">STORE</text>
+            <rect x="96" y="70" width="58" height="36" rx="2" fill="#2c3336"/>
+            <text x="125" y="92" font-family="monospace" font-size="9" fill="#9aa19e" text-anchor="middle">ODOO</text>
+            <path d="M72 38 L96 88" stroke="#c9a24b" stroke-width="1.5" fill="none"/>
+            <path d="M96 88 L72 38" stroke="#c9a24b" stroke-width="1.5" fill="none" stroke-dasharray="2 3"/>
+            <circle cx="84" cy="63" r="3" fill="#c9a24b"/>
+            <rect x="14" y="78" width="58" height="8" fill="#242c2f"/>
+            <rect x="96" y="28" width="58" height="8" fill="#242c2f"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <p class="project-tag mono">ODOO / AUTOMATION</p>
+          <h3>Orders synced, no manual entry</h3>
+          <p>An Odoo automation that pulls orders from the storefront and updates inventory and invoicing on its own.</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-shot">
+          <svg viewBox="0 0 168 126" xmlns="http://www.w3.org/2000/svg">
+            <rect width="168" height="126" fill="#20272a"/>
+            <rect x="14" y="16" width="140" height="18" rx="2" fill="#2c3336"/>
+            <rect x="20" y="21" width="60" height="8" fill="#5f6866"/>
+            <rect x="130" y="21" width="16" height="8" fill="#c9a24b"/>
+            <rect x="14" y="42" width="66" height="66" fill="#2c3336"/>
+            <rect x="86" y="42" width="68" height="30" fill="#242c2f"/>
+            <rect x="86" y="78" width="68" height="8" fill="#242c2f"/>
+            <rect x="86" y="92" width="46" height="8" fill="#c9a24b" opacity="0.85"/>
+            <path d="M24 88 l10 -14 l8 8 l14 -18" stroke="#c9a24b" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="project-body">
+          <p class="project-tag mono">AI / LANDING PAGE</p>
+          <h3>A landing page that writes itself</h3>
+          <p>Enter a business name and get a live page back — copy, layout, and a working contact form, generated on the spot.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="section-head">
+        <h2>Proof of momentum</h2>
+        <span class="count mono">DAY 12</span>
+      </div>
+      <div class="proof">
+        <div class="proof-figure">92<span>followers</span></div>
+        <div class="proof-text">
+          <p>92 followers in 12 days. I'm documenting every build in public — the wins, the broken deploys, all of it.</p>
+          <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">Follow the build log →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <h2>Get in touch</h2>
+      <div class="contact-list">
+        <a class="contact-row" href="mailto:YOUR_EMAIL@example.com">
+          <span class="contact-label mono">EMAIL</span>
+          <span class="contact-value">YOUR_EMAIL@example.com</span>
+        </a>
+        <a class="contact-row" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">
+          <span class="contact-label mono">IG</span>
+          <span class="contact-value">@YOUR_HANDLE</span>
+        </a>
+      </div>
+      <p class="foot-note mono">Hany — CS grad, building small-business systems.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
