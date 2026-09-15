@@ -265,6 +265,33 @@
     .service-row{ flex-direction: column; gap: 4px; }
   }
 
+  /* ---------- lead magnet ---------- */
+  .leadbox{
+    margin-top: 30px;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .leadbox-tag{
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin: 0 0 12px;
+  }
+  .leadbox h3{
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    line-height:1.3;
+  }
+  .leadbox p{
+    font-size: 14px;
+    color: var(--ink-dim);
+    margin: 0 0 20px;
+    max-width: 44ch;
+  }
+
   @media (max-width: 520px){
     .proof{ grid-template-columns: 1fr; }
   }
@@ -324,7 +351,7 @@
     <section class="hero" style="border-top:none; padding-top:76px;">
       <p class="hero-eyebrow mono">CS GRAD → BUILDER</p>
       <h1>WordPress sites + Odoo automation for ecommerce brands that are done with manual chaos.</h1>
-      <p>I build WordPress stores that actually process orders—and automate the backend with Odoo so you stop losing money to manual work.</p>
+      <p>I build WordPress stores that actually process orders—and automate the backend with Odoo, so you stop losing money to manual work.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <a class="btn btn-ghost" href="#projects">See the work</a>
@@ -406,7 +433,7 @@
       </div>
     </section>
 
-   <section id="proof">
+     <section id="proof">
       <div class="section-head">
         <h2>Proof of momentum</h2>
         <span class="count mono">DAY 14</span>
@@ -440,6 +467,13 @@
       </div>
 
       <p class="service-note">First 3 clients get 30% off in exchange for a testimonial.</p>
+
+      <div class="leadbox">
+        <p class="leadbox-tag mono">FREE GUIDE</p>
+        <h3>The 15-Minute Founder</h3>
+        <p>How I built an ecommerce business with no desk, no freedom, and 5 months left.</p>
+        <a class="btn btn-primary" href="YOUR_SIGNUP_LINK" target="_blank" rel="noopener">Get the PDF →</a>
+      </div>
     </section>
 
    <footer id="contact">
@@ -456,9 +490,9 @@
       </div>
       <p class="foot-note mono">Hany — CS grad, building small-business systems.</p>
     </footer>
-    
 
   </main>
 
 </body>
+
 </html>
