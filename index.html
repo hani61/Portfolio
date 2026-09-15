@@ -232,6 +232,39 @@
   }
   .proof-text a:hover{ border-color: var(--accent); }
 
+  /* ---------- services ---------- */
+  .service-row{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap: 20px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+  }
+  .service-row:last-of-type{ border-bottom: 1px solid var(--line); }
+  .service-name{
+    font-size: 15px;
+  }
+  .service-price{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .service-note{
+    margin: 22px 0 0;
+    font-size: 13px;
+    color: var(--ink-dim);
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius);
+  }
+  @media (max-width: 480px){
+    .service-row{ flex-direction: column; gap: 4px; }
+  }
+
   @media (max-width: 520px){
     .proof{ grid-template-columns: 1fr; }
   }
@@ -290,8 +323,8 @@
 
     <section class="hero" style="border-top:none; padding-top:76px;">
       <p class="hero-eyebrow mono">CS GRAD → BUILDER</p>
-      <h1>I build WordPress sites and Odoo automations.</h1>
-      <p>Small businesses get a working store or a working backend, not a pitch deck. I ship, then I write up what happened.</p>
+      <h1>WordPress sites + Odoo automation for ecommerce brands that are done with manual chaos.</h1>
+      <p>I build WordPress stores that actually process orders—and automate the backend with Odoo so you stop losing money to manual work.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <a class="btn btn-ghost" href="#projects">See the work</a>
@@ -373,21 +406,43 @@
       </div>
     </section>
 
-    <section id="proof">
+   <section id="proof">
       <div class="section-head">
         <h2>Proof of momentum</h2>
-        <span class="count mono">DAY 12</span>
+        <span class="count mono">DAY 14</span>
       </div>
       <div class="proof">
-        <div class="proof-figure">92<span>followers</span></div>
+        <div class="proof-figure">100<span>followers</span></div>
         <div class="proof-text">
-          <p>92 followers in 12 days. I'm documenting every build in public — the wins, the broken deploys, all of it.</p>
-          <a href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noopener">Follow the build log →</a>
+          <p>Building in public. 14 days. 100 followers. 5 months left in service. Documenting every system I build. Follow the climb on Instagram →</p>
+          <a href="https://instagram.com/hany.lockedin" target="_blank" rel="noopener">Follow the build log →</a>
         </div>
       </div>
     </section>
 
-    <footer id="contact">
+    <section id="services">
+      <div class="section-head">
+        <h2>Services</h2>
+        <span class="count mono">STARTING AT</span>
+      </div>
+
+      <div class="service-row">
+        <span class="service-name">WordPress + WooCommerce builds</span>
+        <span class="service-price">from $800</span>
+      </div>
+      <div class="service-row">
+        <span class="service-name">Odoo inventory &amp; accounting setup</span>
+        <span class="service-price">from $1,200</span>
+      </div>
+      <div class="service-row">
+        <span class="service-name">WordPress ↔ Odoo integration</span>
+        <span class="service-price">from $2,000</span>
+      </div>
+
+      <p class="service-note">First 3 clients get 30% off in exchange for a testimonial.</p>
+    </section>
+
+   <footer id="contact">
       <h2>Get in touch</h2>
       <div class="contact-list">
         <a class="contact-row" href="mailto:hani.ahmed6080@gmail.com">
@@ -401,6 +456,7 @@
       </div>
       <p class="foot-note mono">Hany — CS grad, building small-business systems.</p>
     </footer>
+    
 
   </main>
 
