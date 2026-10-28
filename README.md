@@ -132,7 +132,6 @@ Then add the new URL to `sitemap.xml`. Send me the old URL list and this can be 
 
 ## Before launch — replace these
 
-- [ ] Real email address (`hani.ahmed6080@gmail.com` is a placeholder)
 - [ ] Full street address in the footer (currently “Cairo, Egypt”)
 - [ ] Confirmed WooCommerce / Odoo / maintenance prices
 - [ ] Real screenshots for the two case studies + a real photo on About
