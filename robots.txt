@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Nothing private lives on this domain, but keep crawl budget off utility pages.
+Disallow: /*?demo=1
+Disallow: /*?type=
+
+Sitemap: https://hanylockedin.com/sitemap.xml

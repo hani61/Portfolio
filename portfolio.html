@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<title>Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany</title>
+<meta name="description" content="Two WordPress builds: a marketing agency lead-generation site and a dental clinic booking site. What the problem was, what I changed, and what it's built to do next.">
+<meta name="author" content="Hany">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#08080a">
+<link rel="canonical" href="https://hanylockedin.com/portfolio.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hany">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany">
+<meta property="og:description" content="A marketing agency lead-gen site and a dental clinic booking site. Built around one action each, not around a theme.">
+<meta property="og:url" content="https://hanylockedin.com/portfolio.html">
+<meta property="og:image" content="https://hanylockedin.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hany — portfolio of WordPress builds.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany">
+<meta name="twitter:description" content="A marketing agency lead-gen site and a dental clinic booking site. Built around one action each.">
+<meta name="twitter:image" content="https://hanylockedin.com/assets/img/og-image.png">
+<meta name="twitter:image:alt" content="Hany — portfolio of WordPress builds.">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/montserrat-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script defer src="/assets/js/site.js"></script>
+<script defer data-domain="hanylockedin.com" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hanylockedin.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://hanylockedin.com/portfolio.html" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://hanylockedin.com/portfolio.html#page",
+      "name": "Portfolio — Hany",
+      "description": "WordPress builds for a marketing agency and a dental clinic.",
+      "url": "https://hanylockedin.com/portfolio.html",
+      "isPartOf": { "@id": "https://hanylockedin.com/#website" },
+      "about": { "@id": "https://hanylockedin.com/#person" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Marketing agency lead-generation website",
+              "about": "WordPress website for a marketing agency in Cairo",
+              "creator": { "@id": "https://hanylockedin.com/#person" },
+              "image": "https://hanylockedin.com/assets/img/work-agency.png"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Dental clinic booking website",
+              "about": "WordPress website with appointment booking for a dental clinic",
+              "creator": { "@id": "https://hanylockedin.com/#person" },
+              "image": "https://hanylockedin.com/assets/img/work-dental.png"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div id="navProgress" class="nav-progress" aria-hidden="true"></div>
+
+<header id="siteNav" class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Hany, home">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-word">Hany</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/portfolio.html" aria-current="page">Work</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-cta">DM “SITE”</a>
+    <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div id="navMenu" class="nav-menu" hidden>
+    <a href="/">Home <span aria-hidden="true">→</span></a>
+    <a href="/services.html">Services <span aria-hidden="true">→</span></a>
+    <a href="/portfolio.html">Work <span aria-hidden="true">→</span></a>
+    <a href="/about.html">About <span aria-hidden="true">→</span></a>
+    <a href="/contact.html">Contact <span aria-hidden="true">→</span></a>
+    <a href="/founder-playbook.html">Free guide <span aria-hidden="true">→</span></a>
+    <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM “SITE” for a free audit</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="pb-12 pt-28 sm:pt-36">
+    <div class="wrap">
+      <p class="eyebrow">Selected work</p>
+      <h1 class="mt-6 max-w-4xl text-[clamp(2.2rem,5.6vw,3.9rem)] font-extrabold leading-[0.96]">
+        Two sites. Both had the same problem: nobody was doing anything.
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
+        A visitor landed, read, and left. Here's what was actually broken and what I changed — no awards,
+        no invented percentages.
+      </p>
+      <a class="btn btn-primary mt-8" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">
+        DM “SITE” for a free audit <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CASE 1 -->
+  <article class="section border-t border-line-soft" id="agency">
+    <div class="wrap">
+      <div class="reveal img-frame">
+        <img src="/assets/img/work-agency.png" alt="Marketing agency homepage mockup: dark hero with the headline 'Growth without guesswork', orange primary button, and three case study cards beneath." width="1600" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-mist">01 · Marketing agency · Cairo</p>
+          <h2 class="mt-3 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">An agency site that has to earn the meeting.</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">WordPress</span>
+            <span class="chip">Lead generation</span>
+            <span class="chip">Copy structure</span>
+          </div>
+          <div class="mt-6 grid gap-3 text-sm">
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">Timeline</p>
+              <p class="mt-1 font-semibold">6 days, one revision round</p>
+            </div>
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The one action</p>
+              <p class="mt-1 font-semibold">Book a 15-minute call</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs leading-relaxed text-mist/80">Layout preview. Real screenshots and measured results go here as each build ships.</p>
+        </div>
+        <div class="reveal">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-mist">What was wrong</h3>
+          <p class="prose-hany mt-3">
+            A nine-page brochure with three competing calls to action on the homepage and a contact form that
+            emailed an address nobody checked. Their best proof — two named results with real numbers — was
+            buried on page six.
+          </p>
+          <h3 class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-mist">What I changed</h3>
+          <ul class="mt-3 grid gap-2.5 text-sm">
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Four pages instead of nine. Every page asks for the call, once.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Proof moved above the fold: one client, one number, one sentence.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Enquiries land in email and WhatsApp, with a reply-time promise on the button.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Services rewritten as outcomes the client can price, not a list of disciplines.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Under 2s load on mobile, since their buyers open links from WhatsApp.</li>
+          </ul>
+          <!-- TODO: replace with measured results once analytics has 30 days of data -->
+          <div class="card card-flame mt-6 p-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-mist">Watch this space</p>
+            <p class="mt-2 text-sm leading-relaxed text-mist">Baseline captured on launch day. I publish the 30-day enquiry numbers here — good or bad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE 2 -->
+  <article class="section border-t border-line-soft bg-surface/40" id="dental">
+    <div class="wrap">
+      <div class="reveal img-frame">
+        <img src="/assets/img/work-dental.png" alt="Dental clinic homepage mockup: appointment booking bar at the top, a bright hero reading 'A calmer visit, from the first click', treatment cards and a WhatsApp booking button." width="1600" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-mist">02 · Dental clinic · Cairo</p>
+          <h2 class="mt-3 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">A clinic that lives or dies on the booking button.</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">WordPress</span>
+            <span class="chip">Booking flow</span>
+            <span class="chip">Arabic + English</span>
+          </div>
+          <div class="mt-6 grid gap-3 text-sm">
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">Timeline</p>
+              <p class="mt-1 font-semibold">8 days, two revision rounds</p>
+            </div>
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The one action</p>
+              <p class="mt-1 font-semibold">Book an appointment</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs leading-relaxed text-mist/80">Layout preview. Real screenshots and measured results go here as each build ships.</p>
+        </div>
+        <div class="reveal">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-mist">What was wrong</h3>
+          <p class="prose-hany mt-3">
+            The phone number was an image, the booking link was on the contact page, and the treatments were
+            described in language patients don't use. Most visitors were on a phone, at night, deciding whether
+            to call tomorrow.
+          </p>
+          <h3 class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-mist">What I changed</h3>
+          <ul class="mt-3 grid gap-2.5 text-sm">
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Booking bar pinned to the top and a sticky mobile button — always one tap away.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Tap-to-call and WhatsApp as equal options, because half the patients won't fill a form.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Treatments explained in plain language with price ranges and visit length.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Doctor credentials and clinic photos near the top: trust before treatment.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Directions, parking and opening hours in the footer of every page.</li>
+          </ul>
+          <!-- TODO: replace with measured results once analytics has 30 days of data -->
+          <div class="card card-flame mt-6 p-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-mist">Watch this space</p>
+            <p class="mt-2 text-sm leading-relaxed text-mist">Baseline captured on launch day. The 30-day booking numbers get published here too.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="section border-t border-line-soft">
+    <div class="wrap grid gap-10 md:grid-cols-[1fr_1fr] md:gap-16">
+      <div class="reveal">
+        <p class="eyebrow">The pattern</p>
+        <h2 class="mt-5 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">Different industries, identical diagnosis.</h2>
+        <p class="prose-hany mt-4">
+          Neither business needed a redesign. They needed a decision: what is this page asking the visitor to do?
+          Once that's answered, the design writes itself and the price becomes easy to justify.
+        </p>
+      </div>
+      <ul class="grid gap-4 reveal">
+        <li class="card p-5">
+          <p class="text-sm font-semibold">One action per page</p>
+          <p class="mt-1.5 text-sm text-mist">If everything is a call to action, nothing is. Every extra button splits attention.</p>
+        </li>
+        <li class="card p-5">
+          <p class="text-sm font-semibold">Proof before promise</p>
+          <p class="mt-1.5 text-sm text-mist">One named result beats a wall of adjectives. If there's no result yet, show the work itself.</p>
+        </li>
+        <li class="card p-5">
+          <p class="text-sm font-semibold">The phone is the website</p>
+          <p class="mt-1.5 text-sm text-mist">Built and tested on a mid-range Android on 4G. That's where the customer actually is.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section border-t border-line-soft">
+    <div class="wrap text-center">
+      <p class="eyebrow justify-center">Your turn</p>
+      <h2 class="mx-auto mt-5 max-w-2xl text-[clamp(1.9rem,4.2vw,3rem)] font-extrabold">Let's find the leak in your site.</h2>
+      <p class="mx-auto mt-4 max-w-lg text-mist">Free, 15 minutes, three specific fixes. Even if you never hire me, you'll leave with a to-do list.</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM “SITE” for a free audit</a>
+        <a class="btn btn-ghost" href="/services.html">See prices</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line-soft">
+  <div class="wrap py-14">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
+      <div>
+        <a href="/" class="brand" aria-label="Hany, home">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span class="brand-word">Hany</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-mist">
+          I turn websites into revenue systems. WordPress + AI, built from a barracks in Cairo.
+        </p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-paper hover:text-flame" href="https://instagram.com/hany.lockedin" target="_blank" rel="noopener noreferrer">
+          @hany.lockedin <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <nav aria-label="Pages">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Pages</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-flame" href="/">Home</a></li>
+          <li><a class="hover:text-flame" href="/services.html">Services</a></li>
+          <li><a class="hover:text-flame" href="/portfolio.html">Portfolio</a></li>
+          <li><a class="hover:text-flame" href="/about.html">About</a></li>
+          <li><a class="hover:text-flame" href="/contact.html">Contact</a></li>
+          <li><a class="hover:text-flame" href="/founder-playbook.html">Free guide</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Legal</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-flame" href="/privacy.html">Privacy policy</a></li>
+          <li><a class="hover:text-flame" href="/terms.html">Terms of service</a></li>
+          <li><a class="hover:text-flame" href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Contact</p>
+        <address class="mt-4 space-y-2.5 text-sm not-italic text-mist">
+          <p><a class="hover:text-flame" href="mailto:hello@hanylockedin.com">hello@hanylockedin.com</a></p>
+          <p><a class="hover:text-flame" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM @hany.lockedin</a></p>
+          <p>Cairo, Egypt<br>Working with clients in Egypt, the Gulf and the US.</p>
+        </address>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-3 border-t border-line-soft pt-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> Hany. Built from a barracks — documented in public.</p>
+      <a class="hover:text-flame" href="#top">Back to top ↑</a>
+    </div>
+    <div class="h-16 md:hidden" aria-hidden="true"></div>
+  </div>
+</footer>
+
+<div id="stickyCta" class="sticky-cta">
+  <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM “SITE” for a free audit</a>
+</div>
+
+<div id="cookieBanner" class="cookie" role="region" aria-label="Cookie notice" hidden>
+  <p class="text-xs leading-relaxed text-mist">
+    No ad trackers. Only cookieless analytics and one local setting to remember this choice.
+    <a class="text-flame underline" href="/privacy.html">Privacy policy</a>.
+  </p>
+  <div class="mt-3 flex gap-2">
+    <button id="cookieAccept" type="button" class="btn btn-sm btn-primary">Got it</button>
+    <button id="cookieDismiss" type="button" class="btn btn-sm btn-ghost">Essential only</button>
+  </div>
+</div>
+</body>
+</html>

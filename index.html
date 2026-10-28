@@ -1,16 +1,492 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#f2efe9" />
-    <title>Your Name</title>
-    <meta name="description" content="Designer and creative developer. Brand, product and web for people building something worth looking at." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<title>Hany — Websites That Sell | WordPress + AI Revenue Systems</title>
+<meta name="description" content="I turn websites into revenue systems with WordPress + AI. Fixed-price builds for small businesses in Egypt, the Gulf and the US. DM 'SITE' for a free 15-minute audit.">
+<meta name="author" content="Hany">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#08080a">
+<link rel="canonical" href="https://hanylockedin.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hany">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Hany — Websites That Sell | WordPress + AI">
+<meta property="og:description" content="I turn websites into revenue systems. Built for small businesses that want a website that sells — not a poster. DM 'SITE' for a free audit.">
+<meta property="og:url" content="https://hanylockedin.com/">
+<meta property="og:image" content="https://hanylockedin.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hany — I turn websites into revenue systems. WordPress + AI.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hany — Websites That Sell | WordPress + AI">
+<meta name="twitter:description" content="I turn websites into revenue systems. Fixed-price WordPress, WooCommerce and Odoo builds. DM 'SITE' for a free audit.">
+<meta name="twitter:image" content="https://hanylockedin.com/assets/img/og-image.png">
+<meta name="twitter:image:alt" content="Hany — I turn websites into revenue systems. WordPress + AI.">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/montserrat-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script defer src="/assets/js/site.js"></script>
+<script defer data-domain="hanylockedin.com" src="https://plausible.io/js/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://hanylockedin.com/#person",
+      "name": "Hany",
+      "url": "https://hanylockedin.com/",
+      "image": "https://hanylockedin.com/assets/img/about-portrait.png",
+      "jobTitle": "WordPress and AI Website Developer",
+      "description": "I turn websites into revenue systems for small businesses using WordPress and AI.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+      "knowsAbout": ["WordPress", "WooCommerce", "Odoo", "Conversion optimisation", "Search engine optimisation", "Artificial intelligence"],
+      "sameAs": ["https://instagram.com/hany.lockedin"],
+      "worksFor": { "@id": "https://hanylockedin.com/#business" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://hanylockedin.com/#business",
+      "name": "Hany — Revenue Systems for Small Business",
+      "description": "WordPress, WooCommerce and Odoo builds designed to turn traffic into booked calls, orders and invoices.",
+      "url": "https://hanylockedin.com/",
+      "image": "https://hanylockedin.com/assets/img/og-image.png",
+      "email": "hello@hanylockedin.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "EGP, USD",
+      "paymentAccepted": "Bank transfer, InstaPay, Wise",
+      "founder": { "@id": "https://hanylockedin.com/#person" },
+      "sameAs": ["https://instagram.com/hany.lockedin"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+      "areaServed": [
+        { "@type": "Country", "name": "Egypt" },
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "United States" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website systems",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WordPress website build" }, "priceCurrency": "USD", "price": "1500" },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WooCommerce store setup" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Odoo integration" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monthly maintenance" } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hanylockedin.com/#website",
+      "url": "https://hanylockedin.com/",
+      "name": "Hany",
+      "publisher": { "@id": "https://hanylockedin.com/#person" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div id="navProgress" class="nav-progress" aria-hidden="true"></div>
+
+<header id="siteNav" class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Hany, home">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-word">Hany</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/portfolio.html">Work</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <a href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary nav-cta">DM “SITE”</a>
+    <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div id="navMenu" class="nav-menu" hidden>
+    <a href="/">Home <span aria-hidden="true">→</span></a>
+    <a href="/services.html">Services <span aria-hidden="true">→</span></a>
+    <a href="/portfolio.html">Work <span aria-hidden="true">→</span></a>
+    <a href="/about.html">About <span aria-hidden="true">→</span></a>
+    <a href="/contact.html">Contact <span aria-hidden="true">→</span></a>
+    <a href="/founder-playbook.html">Free guide <span aria-hidden="true">→</span></a>
+    <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM “SITE” for a free audit</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="relative overflow-hidden pt-28 pb-14 sm:pt-36 md:pb-20">
+    <div class="wrap">
+      <div class="grid items-center gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:gap-16">
+        <div class="fade-in">
+          <p class="eyebrow">Cairo, Egypt · Building from a barracks</p>
+          <h1 class="mt-6 text-[clamp(2.45rem,6.2vw,4.5rem)] font-extrabold leading-[0.94]">
+            I turn websites into <span class="mark">revenue systems.</span>
+          </h1>
+          <p class="mt-5 text-[clamp(1.05rem,2.2vw,1.5rem)] font-semibold text-paper">
+            WordPress + AI.
+          </p>
+          <p class="mt-4 max-w-xl text-base leading-relaxed text-mist sm:text-lg">
+            Built for small businesses that want a website that sells — not a poster.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer" data-cta="hero-dm">
+              DM “SITE” for a free audit
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="/portfolio.html">See the work</a>
+          </div>
+
+          <ul class="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-mist">
+            <li class="flex items-center gap-1.5"><span class="text-flame" aria-hidden="true">✓</span> Free 15-minute audit</li>
+            <li class="flex items-center gap-1.5"><span class="text-flame" aria-hidden="true">✓</span> Reply within 24 hours</li>
+            <li class="flex items-center gap-1.5"><span class="text-flame" aria-hidden="true">✓</span> Fixed scope, fixed price</li>
+          </ul>
+        </div>
+
+        <!-- sample audit card -->
+        <div class="reveal lg:pl-2" aria-label="Example of what a free audit looks like">
+          <div class="card card-flame p-5 sm:p-6">
+            <div class="flex items-center justify-between gap-3">
+              <span class="chip"><span class="dot-live" aria-hidden="true"></span> Sample audit</span>
+              <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-mist">Score 3/6</span>
+            </div>
+            <dl class="mt-5 space-y-3 text-sm">
+              <div class="flex items-center justify-between gap-4 border-b border-line-soft pb-3">
+                <dt class="text-mist">Loads in under 2s</dt>
+                <dd class="font-semibold text-good">Pass · 1.8s</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 border-b border-line-soft pb-3">
+                <dt class="text-mist">CTA above the fold</dt>
+                <dd class="font-semibold text-good">Pass</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4 border-b border-line-soft pb-3">
+                <dt class="text-mist">Checkout drop-off</dt>
+                <dd class="font-semibold text-bad">Fail · 61%</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4">
+                <dt class="text-mist">Follow-up after enquiry</dt>
+                <dd class="font-semibold text-bad">Fail · none</dd>
+              </div>
+            </dl>
+            <p class="mt-5 text-sm leading-relaxed text-mist">
+              Two of these are leaking money every week. The fix is usually a page, not a rebuild.
+            </p>
+            <a class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-flame hover:text-ember" href="/contact.html">
+              Get your own audit <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <p class="mt-3 px-1 text-[11px] leading-relaxed text-mist/80">
+            Illustrative example. Your audit uses your real numbers, not this one.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section aria-label="How I work" class="border-y border-line-soft bg-surface/60">
+    <div class="wrap grid grid-cols-2 gap-y-6 py-7 text-center sm:grid-cols-4 sm:divide-x sm:divide-line-soft">
+      <div class="px-2">
+        <p class="price text-xl">3–14<span class="text-sm font-semibold text-mist"> days</span></p>
+        <p class="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">Typical build</p>
+      </div>
+      <div class="px-2">
+        <p class="price text-xl">24<span class="text-sm font-semibold text-mist"> hrs</span></p>
+        <p class="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">Reply time</p>
+      </div>
+      <div class="px-2">
+        <p class="price text-xl">100<span class="text-sm font-semibold text-mist">%</span></p>
+        <p class="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">Fixed scope</p>
+      </div>
+      <div class="px-2">
+        <p class="price text-xl">3<span class="text-sm font-semibold text-mist"> regions</span></p>
+        <p class="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">EG · Gulf · US</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section aria-label="Who I build for" class="overflow-hidden py-10">
+    <p class="wrap text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-mist">
+      Built for the businesses that keep this economy running
+    </p>
+    <div class="marquee-mask mt-6">
+      <div class="marquee gap-10 pr-10 text-sm font-semibold uppercase tracking-[0.16em] text-mist/70">
+        <span class="flex gap-10">
+          <span>Marketing agencies</span><span class="text-flame" aria-hidden="true">◆</span>
+          <span>Dental &amp; medical clinics</span><span class="text-flame" aria-hidden="true">◆</span>
+          <span>E-commerce stores</span><span class="text-flame" aria-hidden="true">◆</span>
+          <span>Odoo ERP teams</span><span class="text-flame" aria-hidden="true">◆</span>
+          <span>Local service businesses</span><span class="text-flame" aria-hidden="true">◆</span>
+          <span>Founders who hate their website</span><span class="text-flame" aria-hidden="true">◆</span>
+        </span>
+        <span class="flex gap-10" aria-hidden="true">
+          <span>Marketing agencies</span><span class="text-flame">◆</span>
+          <span>Dental &amp; medical clinics</span><span class="text-flame">◆</span>
+          <span>E-commerce stores</span><span class="text-flame">◆</span>
+          <span>Odoo ERP teams</span><span class="text-flame">◆</span>
+          <span>Local service businesses</span><span class="text-flame">◆</span>
+          <span>Founders who hate their website</span><span class="text-flame">◆</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="max-w-2xl reveal">
+        <p class="eyebrow">Services</p>
+        <h2 class="mt-5 text-[clamp(1.9rem,4vw,2.9rem)] font-bold">
+          Three ways to make the website pay for itself.
+        </h2>
+        <p class="mt-4 text-mist">
+          No six-month retainers to find out if it works. You get a scope, a price and a date before anything starts.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <article class="card card-hover reveal flex flex-col">
+          <span class="chip w-fit">01 · WordPress</span>
+          <h3 class="mt-4 text-xl font-bold">A site that books calls.</h3>
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-mist">
+            Fast, clean WordPress built around one action. Every page has a job, and the job is measurable.
+          </p>
+          <div class="mt-5 border-t border-line-soft pt-4">
+            <p class="price text-lg">EGP 10,000–24,000</p>
+            <p class="text-xs text-mist">≈ $200–500 Egypt · $1,500–3,000 US &amp; Gulf</p>
+          </div>
+          <a class="mt-4 link-arrow w-fit" href="/services.html#wordpress">What's included <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card card-hover reveal flex flex-col">
+          <span class="chip w-fit">02 · WooCommerce</span>
+          <h3 class="mt-4 text-xl font-bold">A checkout that stops leaking.</h3>
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-mist">
+            Product pages, payments, shipping and the follow-up emails that turn a cart into an order.
+          </p>
+          <div class="mt-5 border-t border-line-soft pt-4">
+            <p class="price text-lg">EGP 15,000–30,000</p>
+            <p class="text-xs text-mist">≈ $300–650 Egypt · $2,000–4,000 US &amp; Gulf</p>
+          </div>
+          <a class="mt-4 link-arrow w-fit" href="/services.html#woocommerce">What's included <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="card card-hover reveal flex flex-col">
+          <span class="chip w-fit">03 · Odoo</span>
+          <h3 class="mt-4 text-xl font-bold">Stop re-typing orders.</h3>
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-mist">
+            Your site talking to Odoo: orders, stock and invoices in one place, without copy-paste at midnight.
+          </p>
+          <div class="mt-5 border-t border-line-soft pt-4">
+            <p class="price text-lg">EGP 20,000–60,000</p>
+            <p class="text-xs text-mist">≈ $400–1,200 Egypt · $2,500–7,000 US &amp; Gulf</p>
+          </div>
+          <a class="mt-4 link-arrow w-fit" href="/services.html#odoo">What's included <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <p class="mt-6 text-sm text-mist">
+        Already have a site? <a class="font-semibold text-flame hover:text-ember" href="/services.html#maintenance">Monthly maintenance from EGP 2,500 / $120</a> keeps it fast, backed up and updated.
+      </p>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section border-y border-line-soft bg-surface/40" id="work">
+    <div class="wrap">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-xl reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="mt-5 text-[clamp(1.9rem,4vw,2.9rem)] font-bold">Two builds, two different problems.</h2>
+        </div>
+        <a class="link-arrow reveal" href="/portfolio.html">All work <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <a class="group img-frame hover-lift reveal" href="/portfolio.html#agency">
+          <img src="/assets/img/work-agency.png" alt="Marketing agency website mockup: dark hero reading 'Growth without guesswork', orange call to action and case study cards." width="1200" height="900" loading="lazy" decoding="async">
+          <div class="flex items-center justify-between gap-4 border-t border-line bg-surface p-4">
+            <div>
+              <p class="text-sm font-semibold">Marketing agency</p>
+              <p class="text-xs text-mist">Lead-gen site · Cairo</p>
+            </div>
+            <span class="text-flame transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a class="group img-frame hover-lift reveal" href="/portfolio.html#dental">
+          <img src="/assets/img/work-dental.png" alt="Dental clinic website mockup: appointment hero, treatment cards and a booking button." width="1200" height="900" loading="lazy" decoding="async">
+          <div class="flex items-center justify-between gap-4 border-t border-line bg-surface p-4">
+            <div>
+              <p class="text-sm font-semibold">Dental clinic</p>
+              <p class="text-xs text-mist">Booking site · Cairo</p>
+            </div>
+            <span class="text-flame transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT TEASER -->
+  <section class="section">
+    <div class="wrap grid items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
+      <div class="img-frame reveal">
+        <img src="/assets/img/about-portrait.png" alt="Dark portrait-style card reading 'Building from a barracks' with an orange H monogram." width="900" height="1100" loading="lazy" decoding="async">
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Why I build</p>
+        <h2 class="mt-5 text-[clamp(1.8rem,4vw,2.7rem)] font-bold">
+          Building from a barracks. Documenting the climb. One GT3 at a time.
+        </h2>
+        <div class="prose-hany mt-5 max-w-xl">
+          <p>
+            I serve. I build at night. I write down what works. That's the whole origin story — no agency
+            mythology, no borrowed case studies.
+          </p>
+          <p>
+            Small businesses get sold pretty websites that win awards for the designer and nothing for the owner.
+            I'd rather hand you a page that makes the phone ring.
+          </p>
+        </div>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a class="btn btn-ghost btn-sm" href="/about.html">Read the full story</a>
+          <a class="btn btn-ghost btn-sm" href="https://instagram.com/hany.lockedin" target="_blank" rel="noopener noreferrer">Follow the climb</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="pb-16">
+    <div class="wrap">
+      <div class="card card-flame reveal overflow-hidden p-7 sm:p-10">
+        <div class="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div>
+            <span class="chip">Free PDF · 9 pages</span>
+            <h2 class="mt-4 text-[clamp(1.7rem,3.6vw,2.4rem)] font-bold">
+              The 15-Minute Founder
+            </h2>
+            <p class="mt-3 max-w-lg text-sm leading-relaxed text-mist sm:text-base">
+              The 15-minute weekly system I use to keep client work, stock and follow-ups from collapsing while
+              I'm away from my phone. One page a day. No apps.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="btn btn-primary btn-block" href="/founder-playbook.html">Get the free guide <span aria-hidden="true">→</span></a>
+            <p class="text-center text-xs text-mist">No spam. Unsubscribe in one click.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="section border-t border-line-soft bg-surface/50">
+    <div class="wrap text-center">
+      <p class="eyebrow justify-center">Next step</p>
+      <h2 class="mx-auto mt-5 max-w-3xl text-[clamp(2rem,4.6vw,3.2rem)] font-extrabold">
+        Your website should be your best salesperson. Right now it's probably a business card.
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-mist">
+        Send one word. I'll send back what I'd fix first, free, within 24 hours.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer" data-cta="footer-dm">
+          DM “SITE” for a free audit
+        </a>
+        <a class="btn btn-ghost" href="/contact.html">Use the form instead</a>
+      </div>
+      <p class="mt-5 text-sm text-mist">
+        or email <a class="text-paper underline decoration-line hover:decoration-flame" href="mailto:hello@hanylockedin.com">hello@hanylockedin.com</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line-soft">
+  <div class="wrap py-14">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
+      <div>
+        <a href="/" class="brand" aria-label="Hany, home">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span class="brand-word">Hany</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-mist">
+          I turn websites into revenue systems. WordPress + AI, built from a barracks in Cairo.
+        </p>
+        <a class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-paper hover:text-flame" href="https://instagram.com/hany.lockedin" target="_blank" rel="noopener noreferrer">
+          @hany.lockedin <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <nav aria-label="Pages">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Pages</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-flame" href="/">Home</a></li>
+          <li><a class="hover:text-flame" href="/services.html">Services</a></li>
+          <li><a class="hover:text-flame" href="/portfolio.html">Portfolio</a></li>
+          <li><a class="hover:text-flame" href="/about.html">About</a></li>
+          <li><a class="hover:text-flame" href="/contact.html">Contact</a></li>
+          <li><a class="hover:text-flame" href="/founder-playbook.html">Free guide</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Legal</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a class="hover:text-flame" href="/privacy.html">Privacy policy</a></li>
+          <li><a class="hover:text-flame" href="/terms.html">Terms of service</a></li>
+          <li><a class="hover:text-flame" href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-mist">Contact</p>
+        <address class="mt-4 space-y-2.5 text-sm not-italic text-mist">
+          <p><a class="hover:text-flame" href="mailto:hello@hanylockedin.com">hello@hanylockedin.com</a></p>
+          <p><a class="hover:text-flame" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM @hany.lockedin</a></p>
+          <p>Cairo, Egypt<br>Working with clients in Egypt, the Gulf and the US.</p>
+        </address>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-3 border-t border-line-soft pt-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span data-year>2026</span> Hany. Built from a barracks — documented in public.</p>
+      <a class="hover:text-flame" href="#top">Back to top ↑</a>
+    </div>
+    <div class="h-16 md:hidden" aria-hidden="true"></div>
+  </div>
+</footer>
+
+<div id="stickyCta" class="sticky-cta">
+  <a class="btn btn-primary" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">DM “SITE” for a free audit</a>
+</div>
+
+<div id="cookieBanner" class="cookie" role="region" aria-label="Cookie notice" hidden>
+  <p class="text-xs leading-relaxed text-mist">
+    No ad trackers. Only cookieless analytics and one local setting to remember this choice.
+    <a class="text-flame underline" href="/privacy.html">Privacy policy</a>.
+  </p>
+  <div class="mt-3 flex gap-2">
+    <button id="cookieAccept" type="button" class="btn btn-sm btn-primary">Got it</button>
+    <button id="cookieDismiss" type="button" class="btn btn-sm btn-ghost">Essential only</button>
+  </div>
+</div>
+</body>
 </html>
