@@ -13,7 +13,7 @@
      ========================================================================== */
   var FORM_ENDPOINT = '';
 
-  var CONTACT_EMAIL = 'hello@hanylockedin.com';
+  var CONTACT_EMAIL = 'hani.ahmed6080@gmail.com';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
   var URL_RE = /^https?:\/\/[^\s/]+\.[^\s]{2,}$/i;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

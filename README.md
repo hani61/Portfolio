@@ -44,7 +44,7 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
 - **Copy, prices, page text** live directly in the `.html` files.
 - **Design tokens** (colours, type, animations) are in `src/input.css` under `@theme`.
 - **Instagram / email** appear in every page and footer. Update with:
-  `grep -rl "hany.lockedin" *.html` and `grep -rl "hello@hanylockedin.com" *.html`.
+  `grep -rl "hany.lockedin" *.html` and `grep -rl "hani.ahmed6080@gmail.com" *.html`.
 - **Prices:** WordPress (EGP 10,000–24,000 / $1,500–3,000) come from the brief. WooCommerce,
   Odoo and maintenance figures are estimates — confirm them before launch and update
   `services.html` (table + each section) and the three cards on `index.html`.
@@ -132,7 +132,7 @@ Then add the new URL to `sitemap.xml`. Send me the old URL list and this can be 
 
 ## Before launch — replace these
 
-- [ ] Real email address (`hello@hanylockedin.com` is a placeholder)
+- [ ] Real email address (`hani.ahmed6080@gmail.com` is a placeholder)
 - [ ] Full street address in the footer (currently “Cairo, Egypt”)
 - [ ] Confirmed WooCommerce / Odoo / maintenance prices
 - [ ] Real screenshots for the two case studies + a real photo on About
