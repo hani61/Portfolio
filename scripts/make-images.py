@@ -3,10 +3,11 @@
 
     python3 scripts/make-images.py
 
-Fonts: uses the Montserrat variable TTF at scripts/Montserrat.ttf if present,
-else /tmp/Montserrat.ttf, else DejaVuSans-Bold. Output goes to assets/img/.
+Fonts: Montserrat (Latin), Lalezar and Tajawal (Arabic) are downloaded into
+scripts/fonts/ on first run (gitignored). Output goes to assets/img/.
 """
 import os
+import urllib.request
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,15 +22,45 @@ PAPER = (245, 245, 242)
 FLAME = (255, 106, 0)
 EMBER = (255, 145, 66)
 
+FONTS_DIR = os.path.join(ROOT, "scripts", "fonts")
+os.makedirs(FONTS_DIR, exist_ok=True)
+
+GOOGLE_FONTS = "https://raw.githubusercontent.com/google/fonts/main/ofl"
+FONT_URLS = {
+    "Montserrat.ttf": GOOGLE_FONTS + "/montserrat/Montserrat%5Bwght%5D.ttf",
+    "Lalezar-Regular.ttf": GOOGLE_FONTS + "/lalezar/Lalezar-Regular.ttf",
+    "Tajawal-Regular.ttf": GOOGLE_FONTS + "/tajawal/Tajawal-Regular.ttf",
+}
+
+
+def ensure_font(name):
+    """Return the path to scripts/fonts/<name>, downloading it once if needed."""
+    path = os.path.join(FONTS_DIR, name)
+    if os.path.exists(path):
+        return path
+    if name not in FONT_URLS:
+        return None
+    try:
+        with urllib.request.urlopen(FONT_URLS[name], timeout=45) as resp, open(path, "wb") as out:
+            out.write(resp.read())
+        return path
+    except Exception as exc:  # offline: fall through to whatever is installed
+        print(f"font download failed ({name}): {exc}")
+        return None
+
+
 FONT_CANDIDATES = [
+    os.path.join(FONTS_DIR, "Montserrat.ttf"),
     os.path.join(ROOT, "scripts", "Montserrat.ttf"),
-    "/tmp/Montserrat.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
 ]
 FONT_PATH = next((p for p in FONT_CANDIDATES if os.path.exists(p)), None)
 
 
 def font(size, weight=700):
+    global FONT_PATH
+    if FONT_PATH is None:
+        FONT_PATH = ensure_font("Montserrat.ttf")
     f = ImageFont.truetype(FONT_PATH, size)
     try:
         f.set_variation_by_axes([weight])
@@ -318,6 +349,188 @@ DENTAL = {
 }
 
 
+GREEN = (3, 112, 63)
+DEEP = (2, 54, 32)
+CREAM = (255, 247, 240)
+RED = (237, 30, 46)
+YELLOW = (255, 212, 59)
+
+AR_FONTS = {
+    "display": "Lalezar-Regular.ttf",
+    "body": "Tajawal-Regular.ttf",
+}
+
+
+def ar_font(kind, size):
+    path = ensure_font(AR_FONTS[kind])
+    if path:
+        return ImageFont.truetype(path, size)
+    return font(size, 700)
+
+
+def rtl(d, xy, text, f, fill, anchor="ra"):
+    d.text(xy, text, font=f, fill=fill, anchor=anchor, direction="rtl", language="ar")
+
+
+def wrap_rtl(d, text, f, max_width):
+    words, lines, cur = text.split(), [], ""
+    for word in words:
+        trial = (cur + " " + word).strip()
+        if d.textlength(trial, font=f, direction="rtl", language="ar") <= max_width:
+            cur = trial
+        else:
+            if cur:
+                lines.append(cur)
+            cur = word
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def dashed_circle(d, center, radius, fill, width=3, dashes=40):
+    cx, cy = center
+    step = 360 / dashes
+    for i in range(0, dashes, 2):
+        d.arc(
+            [cx - radius, cy - radius, cx + radius, cy + radius],
+            start=int(i * step),
+            end=int((i + 1) * step),
+            fill=fill,
+            width=width,
+        )
+
+
+def frosty_mockup(path):
+    """RTL Arabic one-pager mockup for فروستي آيس كريم (green/red/cream/yellow)."""
+    w, h = 1600, 1200
+    img = Image.new("RGB", (w, h), DEEP)
+    d = ImageDraw.Draw(img)
+    for y in range(h):
+        t = y / h
+        d.line([(0, y), (w, y)], fill=tuple(int(GREEN[i] + (DEEP[i] - GREEN[i]) * t) for i in range(3)))
+
+    streak = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(streak)
+    for x in range(-h, w + h, 120):
+        sd.line([(x, 0), (x + 430, h)], fill=(255, 255, 255, 5), width=44)
+    img = Image.alpha_composite(img.convert("RGBA"), streak).convert("RGB")
+    img = Image.blend(img, Image.effect_noise((w, h), 16).convert("RGB"), 0.03)
+    d = ImageDraw.Draw(img)
+
+    x0, y0, x1, y1 = 90, 120, 1510, 1090
+    d.rounded_rectangle([x0 + 8, y0 + 18, x1 + 8, y1 + 18], radius=20, fill=(2, 32, 19))
+    d.rounded_rectangle([x0, y0, x1, y1], radius=20, fill=GREEN, outline=(2, 82, 48), width=2)
+    d.rounded_rectangle([x0, y0, x1, y0 + 58], radius=20, fill=(2, 90, 51))
+    d.rectangle([x0, y0 + 40, x1, y0 + 58], fill=(2, 90, 51))
+    for i in range(3):
+        cx = x0 + 30 + i * 24
+        d.ellipse([cx, y0 + 22, cx + 13, y0 + 35], fill=(6, 68, 40))
+    d.rounded_rectangle([x0 + 520, y0 + 16, x0 + 1000, y0 + 44], radius=14, fill=(2, 66, 39))
+    d.text((x0 + 542, y0 + 21), "frosty.damietta", font=font(15, 500), fill=(206, 234, 217))
+
+    cx0, cx1 = x0 + 64, x1 - 64
+
+    # Brand + nav, right aligned (RTL)
+    d.rounded_rectangle([cx1 - 40, 196, cx1, 242], radius=11, fill=RED)
+    d.text((cx1 - 20, 205), "F", font=font(26, 800), fill=CREAM, anchor="ma")
+    rtl(d, (cx1 - 56, 194), "فروستي", ar_font("display", 42), CREAM)
+    nx = cx1 - 210
+    for item in ["المنيو", "الفروع", "التقييمات"]:
+        rtl(d, (nx, 212), item, ar_font("body", 18), (200, 231, 213))
+        nx -= 92
+
+    d.rounded_rectangle([cx0, 196, cx0 + 210, 250], radius=27, fill=YELLOW)
+    rtl(d, (cx0 + 105, 210), "اطلب دلوقتي", ar_font("body", 21), (8, 46, 28), anchor="ma")
+
+    # Hero copy
+    rtl(d, (cx1, 300), "من دمياط وبطعم أهلي، ٩ الصبح لحد ٣ الفجر", ar_font("body", 17), YELLOW)
+    rtl(d, (cx1, 338), "آيس كريم لحد ٣", ar_font("display", 72), CREAM)
+    rtl(d, (cx1, 412), "بعد نص الليل", ar_font("display", 72), YELLOW)
+
+    sub_font = ar_font("body", 21)
+    sy = 512
+    for line in wrap_rtl(d, "٦ نكهات في كورن واحد. من ٤٥ ج.م، وتوصيل لحد باب البيت.", sub_font, 620):
+        rtl(d, (cx1, sy), line, sub_font, (226, 243, 232))
+        sy += 32
+
+    by = sy + 24
+    d.rounded_rectangle([cx1 - 212, by, cx1, by + 56], radius=28, fill=YELLOW)
+    rtl(d, (cx1 - 106, by + 13), "اطلب دلوقتي", ar_font("body", 21), (8, 46, 28), anchor="ma")
+    d.rounded_rectangle([cx1 - 372, by, cx1 - 228, by + 56], radius=28, outline=CREAM, width=2)
+    rtl(d, (cx1 - 300, by + 13), "كلمنا", ar_font("body", 21), CREAM, anchor="ma")
+
+    # Cone in a dashed ring
+    ring_cx, ring_cy, ring_r = cx0 + 214, 470, 138
+    dashed_circle(d, (ring_cx, ring_cy), ring_r, CREAM, width=3)
+    d.polygon(
+        [(ring_cx - 46, ring_cy + 26), (ring_cx + 46, ring_cy + 26), (ring_cx, ring_cy + 146)],
+        fill=(233, 196, 138),
+    )
+    d.line([(ring_cx - 46, ring_cy + 26), (ring_cx, ring_cy + 146)], fill=(206, 168, 112), width=2)
+    d.line([(ring_cx + 46, ring_cy + 26), (ring_cx, ring_cy + 146)], fill=(206, 168, 112), width=2)
+    for dx, dy, col in [(-40, 10, (226, 122, 138)), (40, 10, YELLOW), (0, -38, CREAM)]:
+        d.ellipse(
+            [ring_cx + dx - 40, ring_cy + dy - 40, ring_cx + dx + 40, ring_cy + dy + 40],
+            fill=col,
+            outline=(2, 90, 51),
+            width=2,
+        )
+    d.rounded_rectangle([ring_cx - 62, ring_cy + 118, ring_cx + 62, ring_cy + 162], radius=12, fill=CREAM)
+    rtl(d, (ring_cx, ring_cy + 126), "من ٤٥ ج.م", ar_font("body", 16), (2, 70, 42), anchor="ma")
+
+    # Trust strip
+    d.line([(cx0, 672), (cx1, 672)], fill=(255, 255, 255, 40), width=1)
+    stats = [("٤.٢ من ٥", "تقييم جوجل"), ("٤٨٣", "مراجعة"), ("٣ الفجر", "نقفل"), ("٢١", "صنف في المنيو")]
+    span = (cx1 - cx0) / 4
+    for i, (big, small) in enumerate(stats):
+        mid = cx0 + span * i + span / 2
+        rtl(d, (mid, 700), big, ar_font("display", 40), CREAM, anchor="ma")
+        rtl(d, (mid, 752), small, ar_font("body", 15), (190, 226, 205), anchor="ma")
+        if i:
+            d.line([(cx0 + span * i, 690), (cx0 + span * i, 770)], fill=(255, 255, 255, 34), width=1)
+
+    # Menu tickets
+    card_y0, card_y1 = 812, 1016
+    gap = 26
+    cw = (cx1 - cx0 - gap * 2) / 3
+    tickets = [
+        ("آيس كريم", "كورن، كوب، برطمان", "٤٥ – ٩٠ ج.م"),
+        ("قشطوطة", "بالفستق والمكسرات", "٦٠ – ٩٥ ج.م"),
+        ("وافل وبان رول", "طازة على الطلب", "٧٥ – ١٣٥ ج.م"),
+    ]
+    for i, (title, desc, price) in enumerate(tickets):
+        bx1 = cx1 - i * (cw + gap)
+        bx0 = bx1 - cw
+        d.rounded_rectangle([bx0, card_y0, bx1, card_y1], radius=16, fill=CREAM)
+        d.rectangle([bx1 - 70, card_y0 + 26, bx1 - 26, card_y0 + 31], fill=RED)
+        rtl(d, (bx1 - 26, card_y0 + 44), title, ar_font("display", 28), (6, 48, 30))
+        rtl(d, (bx1 - 26, card_y0 + 96), desc, ar_font("body", 15), (86, 108, 94))
+        rtl(d, (bx1 - 26, card_y0 + 140), price, ar_font("body", 17), (196, 32, 46))
+
+    # Ticker
+    tick_font = ar_font("body", 17)
+    d.text((cx0, 1042), "الطعم الأصلي  /  ٦ نكهات في كورن واحد  /  فروع: المركزية، سافانا، راس البر  /  توصيل تالبات", font=tick_font, fill=YELLOW, direction="rtl", language="ar")
+
+    img.save(os.path.join(OUT, path), optimize=True)
+    print("wrote", path)
+
+
+LABELLE = {
+    "page": (251, 247, 244),
+    "bar": (243, 234, 230),
+    "pill": (255, 252, 250),
+    "border": (228, 214, 210),
+    "text": (38, 28, 30),
+    "muted": (122, 104, 104),
+    "accent": (176, 96, 108),
+    "on_accent": (255, 250, 250),
+    "visual": (245, 229, 229),
+    "visual_line": (222, 194, 196),
+    "card": (255, 253, 252),
+    "dots": [(220, 206, 202), (220, 206, 202), (220, 206, 202)],
+}
+
+
 def main():
     og_image(
         "og-image.png",
@@ -377,6 +590,26 @@ def main():
         ],
         nav_cta="Book appointment",
     )
+
+    mockup(
+        "work-labelle.png",
+        LABELLE,
+        "Labelle",
+        "labelle.myshopify.com",
+        ["Shop", "New in", "Best sellers"],
+        "BEAUTY & COSMETICS · DAMIETTA",
+        ["Beauty that fits", "your everyday."],
+        "Curated skincare, makeup and fragrance — new arrivals weekly, delivered across Egypt.",
+        "Shop best sellers",
+        [
+            ("New arrivals", "This week's drops, from skincare to fragrance."),
+            ("Best sellers", "The products customers reorder without thinking."),
+            ("Offers", "Bundles and seasonal promotions, priced in EGP."),
+        ],
+        nav_cta="Add to cart",
+    )
+
+    frosty_mockup("work-frosty.png")
 
     # Favicon set
     for size, name in [(16, "favicon-16.png"), (32, "favicon-32.png"), (180, "apple-touch-icon.png"),

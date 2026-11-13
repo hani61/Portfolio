@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://plausible.io https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
-<title>Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany</title>
-<meta name="description" content="Two WordPress builds: a marketing agency lead-generation site and a dental clinic booking site. What the problem was, what I changed, and what it's built to do next.">
+<title>Portfolio — Agency, Clinic, Ice Cream &amp; Cosmetics Builds | Hany</title>
+<meta name="description" content="Four builds: a marketing agency lead-gen site, a dental clinic booking site, an Arabic ice-cream shop page and a Shopify beauty store. What the problem was, what I changed, and where you can click through it.">
 <meta name="author" content="Hany">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#08080a">
@@ -14,16 +14,16 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hany">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany">
-<meta property="og:description" content="A marketing agency lead-gen site and a dental clinic booking site. Built around one action each, not around a theme.">
+<meta property="og:title" content="Portfolio — Agency, Clinic, Ice Cream &amp; Cosmetics Builds | Hany">
+<meta property="og:description" content="Two WordPress sites, an Arabic one-page ice-cream shop and a Shopify cosmetics store — built around one action each, not around a theme.">
 <meta property="og:url" content="https://hanylockedin.com/portfolio.html">
 <meta property="og:image" content="https://hanylockedin.com/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Hany — portfolio of WordPress builds.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Portfolio — Marketing Agency &amp; Dental Clinic Builds | Hany">
-<meta name="twitter:description" content="A marketing agency lead-gen site and a dental clinic booking site. Built around one action each.">
+<meta name="twitter:title" content="Portfolio — Agency, Clinic, Ice Cream &amp; Cosmetics Builds | Hany">
+<meta name="twitter:description" content="Four builds: two WordPress sites, an Arabic ice-cream shop page and a Shopify cosmetics store.">
 <meta name="twitter:image" content="https://hanylockedin.com/assets/img/og-image.png">
 <meta name="twitter:image:alt" content="Hany — portfolio of WordPress builds.">
 
@@ -51,7 +51,7 @@
       "@type": "CollectionPage",
       "@id": "https://hanylockedin.com/portfolio.html#page",
       "name": "Portfolio — Hany",
-      "description": "WordPress builds for a marketing agency and a dental clinic.",
+      "description": "Web builds for a marketing agency, a dental clinic, an ice-cream shop and a cosmetics store.",
       "url": "https://hanylockedin.com/portfolio.html",
       "isPartOf": { "@id": "https://hanylockedin.com/#website" },
       "about": { "@id": "https://hanylockedin.com/#person" },
@@ -78,6 +78,28 @@
               "about": "WordPress website with appointment booking for a dental clinic",
               "creator": { "@id": "https://hanylockedin.com/#person" },
               "image": "https://hanylockedin.com/assets/img/work-dental.png"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Frosty Ice Cream shop website",
+              "about": "Arabic right-to-left one-page site for an ice-cream shop in New Damietta",
+              "creator": { "@id": "https://hanylockedin.com/#person" },
+              "image": "https://hanylockedin.com/assets/img/work-frosty.png"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Labelle beauty and cosmetics store",
+              "about": "Shopify e-commerce store for a beauty and cosmetics shop in Damietta",
+              "creator": { "@id": "https://hanylockedin.com/#person" },
+              "image": "https://hanylockedin.com/assets/img/work-labelle.png"
             }
           }
         ]
@@ -125,11 +147,12 @@
     <div class="wrap">
       <p class="eyebrow">Selected work</p>
       <h1 class="mt-6 max-w-4xl text-[clamp(2.2rem,5.6vw,3.9rem)] font-extrabold leading-[0.96]">
-        Two sites. Both had the same problem: nobody was doing anything.
+        Four builds. Same question every time: what is this page asking someone to do?
       </h1>
       <p class="mt-5 max-w-2xl text-base leading-relaxed text-mist sm:text-lg">
-        A visitor landed, read, and left. Here's what was actually broken and what I changed — no awards,
-        no invented percentages.
+        Two are live — the ice-cream shop and the cosmetics store — so you can click through them yourself.
+        For each one: what it needed, what I built, and what it's meant to do. No awards, no invented
+        percentages.
       </p>
       <a class="btn btn-primary mt-8" href="https://ig.me/m/hany.lockedin" target="_blank" rel="noopener noreferrer">
         DM “SITE” for a free audit <span aria-hidden="true">→</span>
@@ -241,14 +264,116 @@
     </div>
   </article>
 
+  <!-- CASE 3 -->
+  <article class="section border-t border-line-soft" id="frosty">
+    <div class="wrap">
+      <div class="reveal img-frame">
+        <img src="/assets/img/work-frosty.png" alt="Frosty Ice Cream homepage mockup: green right-to-left Arabic hero reading “آيس كريم لحد ٣ بعد نص الليل”, a drawn ice-cream cone inside a dashed ring, and three cream menu tickets with prices." width="1600" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-mist">03 · Ice cream shop · New Damietta</p>
+          <h2 class="mt-3 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">One page that answers: what, open now, how do I order.</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Arabic RTL</span>
+            <span class="chip">Menu + prices</span>
+            <span class="chip">Live open/closed</span>
+          </div>
+          <div class="mt-6 grid gap-3 text-sm">
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The shop</p>
+              <p class="mt-1 font-semibold"><span lang="ar" dir="rtl">فروستي آيس كريم</span> · 4.2 of 5 from 483 Google reviews</p>
+            </div>
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The one action</p>
+              <p class="mt-1 font-semibold">Order or call, one tap away</p>
+            </div>
+          </div>
+          <a class="mt-5 link-arrow w-fit" href="https://site-63f21cbbd79940998fd3adba127a848c.freebuff.page" target="_blank" rel="noopener noreferrer">Open the live page <span aria-hidden="true">↗</span></a>
+          <p class="mt-4 text-xs leading-relaxed text-mist/80">Live build. Gallery photos are drawn placeholders until the shop supplies originals.</p>
+        </div>
+        <div class="reveal">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-mist">What it needed</h3>
+          <p class="prose-hany mt-3">
+            The shop lived on a Google Maps pin and a Facebook page. Late-night customers had to piece together
+            the menu, the prices and whether it was still open — usually on a phone, at midnight.
+          </p>
+          <h3 class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-mist">What I built</h3>
+          <ul class="mt-3 grid gap-2.5 text-sm">
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>A single Arabic (RTL) page, written in Egyptian Arabic and tuned for one hand at night.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Live open/closed status computed from the schedule in Africa/Cairo — including the after-midnight window, so “closed” is never wrong.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>All 21 menu items in five groups with prices (45–135 EGP), taken from the official delivery menu.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>A cone builder: pick 2–6 scoops, watch the cone redraw and the price update.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Phone, WhatsApp and directions as real tap targets, plus IceCreamShop structured data and a layout that holds from 320px up.</li>
+          </ul>
+          <div class="card card-flame mt-6 p-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-mist">Why it's here</p>
+            <p class="mt-2 text-sm leading-relaxed text-mist">A shop with no website now has one link that answers everything a customer asks before walking in.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE 4 -->
+  <article class="section border-t border-line-soft bg-surface/40" id="labelle">
+    <div class="wrap">
+      <div class="reveal img-frame">
+        <img src="/assets/img/work-labelle.png" alt="Labelle cosmetics storefront mockup: cream and rose Shopify layout with the hero headline “Beauty that fits your everyday”, an Add to cart button and new arrivals, best sellers and offers cards." width="1600" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-mist">04 · Beauty &amp; cosmetics · Damietta</p>
+          <h2 class="mt-3 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">A storefront judged on whether browsing feels effortless.</h2>
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="chip">Shopify</span>
+            <span class="chip">E-commerce</span>
+            <span class="chip">English + Arabic</span>
+          </div>
+          <div class="mt-6 grid gap-3 text-sm">
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The store</p>
+              <p class="mt-1 font-semibold">Labelle · Moria Mall, New Damietta</p>
+            </div>
+            <div class="card p-4">
+              <p class="text-xs uppercase tracking-[0.16em] text-mist">The one action</p>
+              <p class="mt-1 font-semibold">Add to cart, then check out</p>
+            </div>
+          </div>
+          <a class="mt-5 link-arrow w-fit" href="https://labelleecom.myshopify.com/" target="_blank" rel="noopener noreferrer">Visit the store <span aria-hidden="true">↗</span></a>
+          <p class="mt-4 text-xs leading-relaxed text-mist/80">Live Shopify storefront, shipping across Egypt.</p>
+        </div>
+        <div class="reveal">
+          <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-mist">What it needed</h3>
+          <p class="prose-hany mt-3">
+            Beauty shoppers arrive knowing the category, not the brand: skincare, makeup, fragrance or haircare.
+            The store had to get them to the right shelf in two taps, in their own language, on a phone.
+          </p>
+          <h3 class="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-mist">What I built</h3>
+          <ul class="mt-3 grid gap-2.5 text-sm">
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>A clean, modern Shopify storefront where the product photography does the selling.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Organised categories and collections, so every product line has one obvious route in.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>New arrivals and best sellers kept current, with promotional offers that don't clutter the catalogue.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Cart and checkout kept short — variant, quantity, delivery — and search that finds a product by name.</li>
+            <li class="flex gap-3"><span class="text-flame" aria-hidden="true">✓</span>Newsletter signup for repeat buyers, and English and Arabic on the same store.</li>
+          </ul>
+          <div class="card card-flame mt-6 p-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-mist">Why it's here</p>
+            <p class="mt-2 text-sm leading-relaxed text-mist">A shop in Moria Mall can only serve Damietta. The same storefront sells that shelf to the rest of Egypt.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
   <section class="section border-t border-line-soft">
     <div class="wrap grid gap-10 md:grid-cols-[1fr_1fr] md:gap-16">
       <div class="reveal">
         <p class="eyebrow">The pattern</p>
         <h2 class="mt-5 text-[clamp(1.8rem,3.8vw,2.6rem)] font-bold">Different industries, identical diagnosis.</h2>
         <p class="prose-hany mt-4">
-          Neither business needed a redesign. They needed a decision: what is this page asking the visitor to do?
-          Once that's answered, the design writes itself and the price becomes easy to justify.
+          None of these needed a redesign. Each one needed a decision: what is this page asking the visitor to
+          do? Once that's answered, the design writes itself and the price becomes easy to justify.
         </p>
       </div>
       <ul class="grid gap-4 reveal">
