@@ -30,7 +30,7 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
 | --- | --- |
 | `index.html` | Home: hero, services, work, about teaser, lead magnet |
 | `services.html` | Pricing in EGP + USD, what's included, process, FAQ |
-| `portfolio.html` | Four case studies: agency, dental clinic, Frosty Ice Cream, Labelle |
+| `portfolio.html` | Five case studies: agency, dental clinic, Frosty Ice Cream, Labelle, Stay Coffee |
 | `about.html` | The barracks story, milestones, working principles |
 | `contact.html` | Validated contact form + DM CTA |
 | `founder-playbook.html` | “The 15-Minute Founder” landing page + inline thank-you state |
@@ -48,10 +48,10 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
 - **Prices:** WordPress (EGP 10,000–24,000 / $1,500–3,000) come from the brief. WooCommerce,
   Odoo and maintenance figures are estimates — confirm them before launch and update
   `services.html` (table + each section) and the three cards on `index.html`.
-- **Screenshots:** all four `assets/img/work-*.png` files are generated mockups (`scripts/make-images.py`,
+- **Screenshots:** all five `assets/img/work-*.png` files are generated mockups (`scripts/make-images.py`,
   which downloads its Lalezar/Tajawal/Montserrat fonts into `scripts/fonts/` on first run).
-  Frosty and Labelle are live, so real captures can replace those two first: 1600×1200 or any 4:3 crop,
-  then update the `alt` text.
+  Frosty, Labelle and Stay Coffee are live, so real captures can replace those three first: 1600×1200 or any
+  4:3 crop, then update the `alt` text.
   `about-portrait.png` is a typographic placeholder for a real photo (900×1100).
 - **Case study results:** `portfolio.html` has `<!-- TODO -->` markers where the 30-day
   numbers go. The page currently makes no unmeasured claims — keep it that way.
@@ -136,7 +136,7 @@ Then add the new URL to `sitemap.xml`. Send me the old URL list and this can be 
 
 - [ ] Full street address in the footer (currently “Cairo, Egypt”)
 - [ ] Confirmed WooCommerce / Odoo / maintenance prices
-- [ ] Real screenshots for the four case studies + a real photo on About
+- [ ] Real screenshots for the five case studies + a real photo on About
 - [ ] Frosty: confirm the final domain (its canonical/OG URLs still point at a temporary one)
 - [ ] Form endpoint + CSP update
 - [ ] Plausible account

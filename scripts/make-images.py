@@ -531,6 +531,22 @@ LABELLE = {
 }
 
 
+STAY = {
+    "page": (28, 21, 18),
+    "bar": (22, 16, 13),
+    "pill": (46, 35, 30),
+    "border": (58, 45, 39),
+    "text": (243, 233, 220),
+    "muted": (176, 158, 145),
+    "accent": (200, 138, 78),
+    "on_accent": (24, 17, 13),
+    "visual": (46, 35, 30),
+    "visual_line": (82, 62, 50),
+    "card": (36, 27, 23),
+    "dots": [(92, 72, 60), (92, 72, 60), (92, 72, 60)],
+}
+
+
 def main():
     og_image(
         "og-image.png",
@@ -610,6 +626,24 @@ def main():
     )
 
     frosty_mockup("work-frosty.png")
+
+    mockup(
+        "work-stay.png",
+        STAY,
+        "stay.",
+        "stay.coffee",
+        ["Menu", "Story", "Visit"],
+        "SPECIALTY COFFEE · MAADI",
+        ["Open until one.", "On purpose."],
+        "Espresso from seven in the morning, matcha and cold foam until the last bulb goes out. Victoria Villa, Maadi.",
+        "See the menu",
+        [
+            ("black coffee", "Espresso, Americano, V60 — 90 to 220 LE."),
+            ("matcha", "Hot, iced and strawberry, 150 to 270 LE."),
+            ("cold foams", "Salted caramel, vanilla, banana and date."),
+        ],
+        nav_cta="Directions",
+    )
 
     # Favicon set
     for size, name in [(16, "favicon-16.png"), (32, "favicon-32.png"), (180, "apple-touch-icon.png"),
