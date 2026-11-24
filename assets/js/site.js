@@ -145,6 +145,26 @@
   }
 
   /* -------------------------------------------------------------------------
+     Dealt moments: a type-led line rises once when its own section arrives.
+     Nothing else on the page moves on scroll.
+     ------------------------------------------------------------------------- */
+  var moments = $$('[data-moment]');
+  if (moments.length) {
+    if (!('IntersectionObserver' in window) || reduceMotion) {
+      moments.forEach(function (el) { el.classList.add('is-in'); });
+    } else {
+      var mo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          mo.unobserve(entry.target);
+        });
+      }, { threshold: 0.25 });
+      moments.forEach(function (el) { mo.observe(el); });
+    }
+  }
+
+  /* -------------------------------------------------------------------------
      Cookie banner — dismissible, does not block content, remembers the choice
      ------------------------------------------------------------------------- */
   var banner = $('#cookieBanner');

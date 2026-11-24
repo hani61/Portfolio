@@ -5,6 +5,14 @@ Static, multi-page site for Hany — “I turn websites into revenue systems. Wo
 Plain HTML, one compiled Tailwind stylesheet, one vanilla JS file. No React, no runtime
 framework, no server. Deploys straight to GitHub Pages.
 
+Design system: the `sunset-cream` palette and rules in `DESIGN.md` (derived from mistral.ai) —
+white canvas with cream `#fff8e0` surfaces, ink `#1f1f1f`, sunset orange `#fa520f` reserved for
+the primary action, buttons at 8px and cards at 12px, Instrument Serif display over Inter, and
+the red→orange→yellow→cream sunset stripe band above the footer of every page.
+
+The rules came from `DESIGN.md`; run `npx getdesign@latest add mistral.ai` to regenerate it.
+The layering on top of it (one section per screen, fixed nav, split hero) is the house style.
+
 ## Run it
 
 ```sh
@@ -28,7 +36,7 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home: hero, services, work, about teaser, lead magnet |
+| `index.html` | Home: split hero, services, three live builds, process, prices, pattern, FAQ |
 | `services.html` | Pricing in EGP + USD, what's included, process, FAQ |
 | `portfolio.html` | Five case studies: agency, dental clinic, Frosty Ice Cream, Labelle, Stay Coffee |
 | `about.html` | The barracks story, milestones, working principles |
@@ -42,7 +50,14 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
 ## Edit the content
 
 - **Copy, prices, page text** live directly in the `.html` files.
-- **Design tokens** (colours, type, animations) are in `src/input.css` under `@theme`.
+- **Design tokens** live at the top of `src/input.css`: the palette and rhythm in `:root`, the
+  Tailwind utility aliases in `@theme`. The typefaces are self-hosted in `assets/fonts/`
+  (Inter + Instrument Serif, latin + latin-ext each) so the CSP can stay `font-src 'self'`.
+  PP Editorial Old from `DESIGN.md` is licensed, so Instrument Serif stands in for it.
+- **The sunset stripe** is `<div class="sunset-stripe" aria-hidden="true"></div>` directly above
+  each `<footer class="closing">`. Keep it on every page.
+- **Brand images:** `python3 scripts/make-brand.py` regenerates the OG cards and the favicon set
+  from the same palette and typefaces, including the stripe on the OG cards.
 - **Instagram / email** appear in every page and footer. Update with:
   `grep -rl "hany.lockedin" *.html` and `grep -rl "hani.ahmed6080@gmail.com" *.html`.
 - **Prices:** WordPress (EGP 10,000–24,000 / $1,500–3,000) come from the brief. WooCommerce,
@@ -50,6 +65,7 @@ bun run pdf          # regenerate the lead magnet PDF (Python + Pillow)
   `services.html` (table + each section) and the three cards on `index.html`.
 - **Screenshots:** all five `assets/img/work-*.png` files are generated mockups (`scripts/make-images.py`,
   which downloads its Lalezar/Tajawal/Montserrat fonts into `scripts/fonts/` on first run).
+  `assets/img/studio-desk.jpg` is a licensed Unsplash stand-in for a studio photograph.
   Frosty, Labelle and Stay Coffee are live, so real captures can replace those three first: 1600×1200 or any
   4:3 crop, then update the `alt` text.
   `about-portrait.png` is a typographic placeholder for a real photo (900×1100).

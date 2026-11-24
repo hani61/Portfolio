@@ -10,3 +10,8 @@ dist
 .preview.log
 scripts/Montserrat.ttf
 scripts/fonts/
+
+# design skill install + local audit tooling (not site assets)
+.claude/
+.taste-skill/
+.playwright/
