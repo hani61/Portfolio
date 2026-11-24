@@ -527,6 +527,7 @@
     border: 1px solid rgba(31, 31, 31, 0.12);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 18px 36px -12px;
   }
+  .shot picture { display: block; width: 100%; height: 100%; }
   .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
   .shot--a { top: 0; left: 0; }
   .shot--b { top: 20%; right: 0; }
@@ -598,8 +599,8 @@
   .deliver__cta { margin-top: 24px; width: 100%; }
 
   /* ---------- hero entrance (once, on load) ---------- */
-  /* the headline is never animated: it is the first thing read and the LCP element,
-     so it paints at once and only its neighbours rise in around it */
+  /* the headline is never animated: it is the first thing read, so it paints at once
+     and only its neighbours rise in around it (the front hero print is the LCP image) */
   .enter > :not(h1) {
     animation: enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
